@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="shortcut icon" href="icon.avif" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            height: 100vh;
+            background: #0EB067;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .con{
+            background:#FAF6F5;
+            padding: 30px;
+            border-radius: 7px;
+            height: 400px;
+        }
+        .box{
+            display: block;
+         
+        }
+        .box input{
+            background-color: #d4d7e2;
+            margin: 5px;
+            padding: 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bolder;
+        }
+        #dispaly{
+            background-color: #d4d7e2;
+            border: none;
+            outline: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+            font-weight:700;
+            font-size: large;
+            text-align: right;
+        }
+        .box .divide{
+            margin-left: 18px;
+            padding: 15px 17px;
+            
+        }
+        .box .clr{
+            background-color: #0EB067;
+            padding:15px 17px ;    
+        }
+        .box :last-child{
+            background-color: #0EB067;
+        }
+        h2{
+            text-align: center;
+            margin-top: -5px;
+            margin-bottom: 10px;
+            color: #00904f;
+        }
+    </style>
+</head>
+<body>
+      
+<div class="con">
+    <h2>Calculator</h2>
+    <input type="text" id="dispaly" autocomplete="off">
+         
+    <div class="box">
+    <input type="submit" name="" id="txt" class="clr"  value="AC"  onclick="clr()">
+    <input type="submit" name="" id="txt" class="clr"  value="DEL" onclick="del()">
+    <input type="submit" name="" id="txt" class="divide" value="/" onclick="fun(this.value)">
+    </div>
+
+    <div class="box">
+    <input type="submit" name="" id="txt" value="1"  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="2"  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="3"  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="+"  onclick="fun(this.value)">
+    </div>
+
+    <div class="box">
+    <input type="submit" name="" id="txt" value="4"  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="5"  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="6"  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="-"  onclick="fun(this.value)">
+    </div>
+    <div class="box">
+    <input type="submit" name="" id="txt" value="7"  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="8"  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="9"  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="*"  onclick="fun(this.value)">
+    </div>
+    <div class="box">
+    <input type="submit" name="" id="txt" value="%"  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="0"  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="."  onclick="fun(this.value)">
+    <input type="submit" name="" id="txt" value="="  onclick="equal()">
+    </div>
+
+    </div>
+ 
+    
+    <script>
+        var dis = document.getElementById("dispaly");
+        var a;
+
+        function fun(x){a = dis.value += x};
+        function equal(){dis.value=eval(a)};
+        function clr(){dis.value=""};  
+         function del(){
+            c = dis.value.toString().slice(0,-1);
+            dis.value="";
+            a = dis.value += c;  
+         }
+    </script>
+</body>
+</html>
